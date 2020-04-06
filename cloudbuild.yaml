@@ -9,5 +9,5 @@ steps:
      gcloud app deploy
   dir: /workspace
   env:
-  - 'ML_ARTICLES_BUCKET=climate-poc-ml-articles-bucket'
+  - 'ML_ARTICLES_BUCKET=climate-analytics-generated-articles'
 timeout: "1600s"
