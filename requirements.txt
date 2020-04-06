@@ -1,0 +1,6 @@
+Flask==1.0.2
+tensorflow==1.14.0
+gensim
+google-cloud-storage
+gpt_2_simple
+gunicorn

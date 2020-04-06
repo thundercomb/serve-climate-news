@@ -1,0 +1,13 @@
+steps:
+- name: "gcr.io/cloud-builders/gcloud"
+  entrypoint: /bin/sh
+  args:
+  - '-c'
+  - |
+     sed -e "s/\$$PROJECT_ID/$PROJECT_ID/g" app.yaml.tmpl > app.yaml
+     cat app.yaml
+     gcloud app deploy
+  dir: /workspace
+  env:
+  - 'ML_ARTICLES_BUCKET=climate-poc-ml-articles-bucket'
+timeout: "1600s"

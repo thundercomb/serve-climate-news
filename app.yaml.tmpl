@@ -1,0 +1,6 @@
+runtime: python37
+service: serve-climate-news
+entrypoint: gunicorn -b :8080 -w 2 app.main:app
+env_variables:
+    PROJECT: $PROJECT_ID    # replace in cloud build step
+    ML_ARTICLES_BUCKET: climate-poc-ml-articles-bucket
