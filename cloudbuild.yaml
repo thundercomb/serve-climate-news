@@ -6,7 +6,7 @@ steps:
   - |
      sed -e "s/\$$PROJECT_ID/$PROJECT_ID/g" app.yaml.tmpl > app.yaml
      cat app.yaml
-     gcloud app deploy
+     gcloud app deploy --project ${_ANALYTICS_PROJECT}
   dir: /workspace
   env:
   - 'ML_ARTICLES_BUCKET=${_ANALYTICS_PROJECT}-generated-articles'
