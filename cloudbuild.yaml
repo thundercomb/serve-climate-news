@@ -4,7 +4,8 @@ steps:
   args:
   - '-c'
   - |
-     sed -e "s/\$$PROJECT_ID/$PROJECT_ID/g" app.yaml.tmpl > app.yaml
+     sed -e "s/\$$PROJECT_ID/$PROJECT_ID/g" \
+         -e "s/\$$ML_ARTICLES_BUCKET/$$ML_ARTICLES_BUCKET/g" app.yaml.tmpl > app.yaml
      cat app.yaml
      gcloud app deploy --project ${_ANALYTICS_PROJECT}
   dir: /workspace

@@ -3,4 +3,4 @@ service: serve-climate-news
 entrypoint: gunicorn -b :8080 -w 2 app.main:app
 env_variables:
     PROJECT: $PROJECT_ID    # replace in cloud build step
-    ML_ARTICLES_BUCKET: climate-analytics-generated-articles
+    ML_ARTICLES_BUCKET: $ML_ARTICLES_BUCKET
